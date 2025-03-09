@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2602/2602414.png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-school"></i> School Management System</h1>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <!-- Timesheet Section -->
+            <section id="timesheet" class="fade-in">
+                <h2><i class="fas fa-clock"></i> Timesheet</h2>
+                <div class="card">
+                    <div id="timesheet-entries"></div>
+                    <div class="qris-container">
+                        <h3>Payment via QRIS</h3>
+                        <div id="qris-code"></div>
+                        <button class="btn" onclick="generateQRCode(100000)">Generate QRIS Code</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Attendance Section -->
+            <section id="attendance" class="fade-in">
+                <h2><i class="fas fa-user-clock"></i> Attendance Clock</h2>
+                <div class="card">
+                    <div id="clock" class="digital-clock"></div>
+                    <div class="attendance-controls">
+                        <button class="btn" data-demo="attendance">Record Attendance</button>
+                    </div>
+                    <div class="attendance-status">
+                        <p>Monthly Points: <span id="attendance-score">0</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="fade-in">
+                <h2><i class="fas fa-trophy"></i> Achievements</h2>
+                <div class="card">
+                    <div class="achievement-list"></div>
+                    <p>Total Achievement Points: <span id="achievement-score">0</span></p>
+                    <button class="btn" data-demo="achievement">Add Achievement</button>
+                </div>
+            </section>
+
+            <!-- Offenses Section -->
+            <section id="offenses" class="fade-in">
+                <h2><i class="fas fa-exclamation-triangle"></i> Offenses</h2>
+                <div class="card">
+                    <div class="offense-list"></div>
+                    <p>Total Offense Points: <span id="offense-score">0</span></p>
+                    <button class="btn" data-demo="offense">Record Offense</button>
+                </div>
+            </section>
+
+            <!-- Rewards Section -->
+            <section id="rewards" class="fade-in">
+                <h2><i class="fas fa-gift"></i> Rewards</h2>
+                <div class="card">
+                    <p>Current Reward Points: <span id="reward-score">0</span></p>
+                    <div class="rewards-list">
+                        <!-- Rewards will be dynamically populated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Graph Section -->
+            <section id="graphs" class="fade-in">
+                <h2><i class="fas fa-chart-bar"></i> Performance Graph</h2>
+                <div class="card">
+                    <canvas id="performance-graph"></canvas>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Management System. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
